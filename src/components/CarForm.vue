@@ -22,32 +22,14 @@
     </div>
     <div class="col-12">
       <label for="">description</label>
-      <textarea
-        class="form-control"
-        name=""
-        id=""
-        cols="30"
-        rows="5"
-        v-model="carData.description"
-      ></textarea>
+      <textarea class="form-control" name="" id="" cols="30" rows="5" v-model="carData.description"></textarea>
     </div>
     <div class="col-6">
       <label for="">color</label>
-      <input
-        class="form-control"
-        type="color"
-        name=""
-        id=""
-        v-model="carData.color"
-      />
+      <input class="form-control" type="color" name="" id="" v-model="carData.color" />
     </div>
     <div class="col-6">
-      <button
-        v-if="carData.id"
-        type="button"
-        class="btn btn-primary"
-        @click="editCar"
-      >
+      <button v-if="carData.id" type="button" class="btn btn-primary" @click="editCar">
         Edit Car
       </button>
       <button v-else type="button" class="btn btn-primary" @click="createCar">

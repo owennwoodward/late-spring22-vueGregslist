@@ -16,24 +16,18 @@
         </p>
         <p class="mb-0">{{ formatDate(car.createdAt) }}</p>
       </div>
-      <button
-        v-show="car.creatorId == account.id"
-        class="delete-button btn selectable"
-        @click="deleteCar"
-      >
+      <button v-show="car.creatorId == account.id" class="delete-button btn selectable" @click="deleteCar">
         <i class="mdi mdi-delete-forever"></i>
       </button>
       <!-- NOTE rendering a modal per car, means we have to have unique id's per modal -->
       <Modal v-if="car.creatorId == account.id" :id="'edit-car' + car.id">
         <template #header>Edit {{ car.make }} {{ car.model }}</template>
-        <template #body> <CarForm :editCar="car" /></template>
+        <template #body>
+          <CarForm :editCar="car" />
+        </template>
         <template #button>
-          <button
-            type="button"
-            class="btn btn-warning edit-button position-absolute"
-            data-bs-toggle="modal"
-            :data-bs-target="'#edit-car' + car.id"
-          >
+          <button type="button" class="btn btn-warning edit-button position-absolute" data-bs-toggle="modal"
+            :data-bs-target="'#edit-car' + car.id">
             <i class="mdi mdi-pencil"></i>
           </button>
         </template>
